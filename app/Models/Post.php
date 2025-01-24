@@ -12,4 +12,9 @@ class Post extends Model
         "title",
         "body"
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\HitsController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -26,6 +27,12 @@ Route::group(["middleware" => ["auth"]], function () {
     Route::get('/posts/{post}/edit', [PostController::class, "edit"]);
     Route::put('/posts/{post}', [PostController::class, "update"]);
     Route::delete("/posts/{post}", [PostController::class, "delete"]);
+});
+
+Route::group(["middleware" => ["auth"]], function () {
+
+    Route::get("/hits", [HitsController::class, "index"]);
+    Route::get("/hits/{hit}", [HitsController::class, "show"]);
 });
 
 Route::get('/', function () {

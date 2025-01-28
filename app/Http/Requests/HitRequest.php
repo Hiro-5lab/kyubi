@@ -14,7 +14,7 @@ class HitRequest extends FormRequest
     public function rules()
     {
         return [
-            'hit1' => 'required|string|max:100',
+            'hit1' => 'required|boolean',
         ];
     }
 }

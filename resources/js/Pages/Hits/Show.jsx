@@ -13,11 +13,15 @@ const Show = (props) => {
         }>
 
             <div className="p-12">
-                <h1>{ hit.title }</h1>
+                <h1>{ hit.hit1 }</h1>
 
                 <div>
                     <h3>本文</h3>
-                    <p>{ hits.hit1 }</p>
+                    <p>{ hits.hit2 }</p>
+                </div>
+
+                <div>
+                    <Link href={`/hits/${hit.id}/edit`}>編集</Link>
                 </div>
                 <div>
                     <Link href="/hits">戻る</Link>

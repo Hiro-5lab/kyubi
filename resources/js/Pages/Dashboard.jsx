@@ -16,8 +16,7 @@ export default function Dashboard({ auth }) {
                     </div>
                     <div>
                         <Link href="/posts">Post</Link>
-                        <p></p>
-                        <Link href="/hits">Hits</Link>
+                        <p><Link href="/hits">Hits</Link></p>
                     </div>
                 </div>
             </div>

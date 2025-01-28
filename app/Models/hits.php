@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class hits extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        "hit1",
+        "hit2",
+        "hits",
+        "sum"
+    ];
 }

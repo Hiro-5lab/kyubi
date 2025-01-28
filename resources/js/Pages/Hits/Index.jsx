@@ -30,7 +30,7 @@ const Index = (props) => {
                         </h2>
                         {Array.from({ length: 20 }, (_, i) => (
                             <React.Fragment key={`hit${i + 1}`}>
-                            <span>{hit[`hit${i + 1}`]}</span>
+                            <span>{hit[`hit${i + 1}`] ? "〇" : "×"}</span>
                             {(i + 1) % 5 === 0 && <p />}
                         </React.Fragment>
                         ))}

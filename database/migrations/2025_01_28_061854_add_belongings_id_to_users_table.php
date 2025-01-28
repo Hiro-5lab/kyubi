@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('belongings', function (Blueprint $table) {
-            $table->id();
-            $table->string('orgnization',50);
-            $table->boolean('gender');
-            $table->string('team_number', 10)->nullable();
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            if (!Schema::hasColumn('posts', 'category_id')) {
+                $table->foreignId('belongings_id')->constrained("users")
+                    ->onDelete('cascade')->nullable();
+            }
         });
     }
 
@@ -25,6 +24,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('belongings');
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 };

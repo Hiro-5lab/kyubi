@@ -12,10 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            if (!Schema::hasColumn('users', 'category_id')) {
-                $table->foreignId('belongings_id')->constrained("users")
-                    ->onDelete('cascade')->nullable();
-            }
+            $table->string('user-img')->nullable()->after('name');
+            $table->boolean('leader')->nullable()->after('user-img');
         });
     }
 

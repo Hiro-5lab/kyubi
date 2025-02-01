@@ -9,6 +9,11 @@ class belonging extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'orgnaization',
+        'gender',
+    ];
+
     public function users()
     {
         return $this->belongsTo(User::class);

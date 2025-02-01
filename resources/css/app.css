@@ -12,5 +12,8 @@ h3 {
     @apply text-lg;
 }
 a {
-    @apply text-blue-600 underline;
+    @apply underline;
+}
+button {
+    @apply bg-[#77c4ed] text-[#002333] rounded-2xl shadow-md shadow-[#98a6ae] hover:bg-[#b9dbed] focus:outline-none focus:ring-2 focus:ring-[#b9dbed];
 }

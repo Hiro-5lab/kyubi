@@ -2,9 +2,7 @@ import React, {useState} from "react";
 import Authenticated from "@/Layouts/AuthenticatedLayout";
 import { Link, router } from '@inertiajs/react'
 
-const History = (props) => {
-    const { posts } = props; 
-
+function History() {
 
     return (
         <>

@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\HitsController;
+use App\Http\Controllers\ViewController;
+
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -18,6 +20,9 @@ use Inertia\Inertia;
 |
 */
 
+/**
+ * post function
+ */
 Route::group(["middleware" => ["auth"]], function () {
 
     Route::get("/posts", [PostController::class, "index"]);
@@ -29,6 +34,9 @@ Route::group(["middleware" => ["auth"]], function () {
     Route::delete("/posts/{post}", [PostController::class, "delete"]);
 });
 
+/**
+ * hits function
+ */
 Route::group(["middleware" => ["auth"]], function () {
 
     Route::get("/hits", [HitsController::class, "index"]);
@@ -40,6 +48,17 @@ Route::group(["middleware" => ["auth"]], function () {
     Route::delete("/hits/{hit}", [HitsController::class, "delete"]);
 });
 
+/**
+ * view function
+ */
+Route::group(["middleware" => ["auth"]], function () {
+
+    Route::get("/View", [ViewController::class, "index"]);
+});
+
+/**
+ * first setting
+ */
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),

@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\HitsController;
 use App\Http\Controllers\ViewController;
+use App\Http\Controllers\RecordController;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -54,6 +55,7 @@ Route::group(["middleware" => ["auth"]], function () {
 Route::group(["middleware" => ["auth"]], function () {
 
     Route::get("/View", [ViewController::class, "index"]);
+    Route::get("/View", [RecordController::class, "index"]);
 });
 
 /**

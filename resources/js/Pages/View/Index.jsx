@@ -8,14 +8,14 @@ import Authenticated from "@/Layouts/AuthenticatedLayout";
 import { Link, router } from '@inertiajs/react'
 
 const Index = (props) => {
-    const { user } = props.auth; 
-    // const user = props.auth.user;
-    console.log(user.name);
+    const { user } = props.auth; // const user = props.auth.user;
+    const { records } = props;
+    console.log(props);
     return (
         <div className ="bg-gray-50">
             <Header user = {user}/>
             <Operarion />
-            <Records />
+            <Records records={records}/>
             <History />
         </div>
     );

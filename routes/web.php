@@ -55,7 +55,15 @@ Route::group(["middleware" => ["auth"]], function () {
 Route::group(["middleware" => ["auth"]], function () {
 
     Route::get("/View", [ViewController::class, "index"]);
+});
+
+/**
+ * Record function
+ */
+Route::group(["middleware" => ["auth"]], function () {
+
     Route::get("/View", [RecordController::class, "index"]);
+    Route::get("/View/{record}", [RecordController::class, "show"]);
 });
 
 /**

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Authenticated from "@/Layouts/AuthenticatedLayout";
-import { Link, router } from '@inertiajs/react'
+import { Link, router } from '@inertiajs/react';
 
 
 function Records({ records }) {
@@ -10,7 +10,9 @@ function Records({ records }) {
             { records.map((record)=>
                 <div key={record.id}>   
                     <div className ="p-3 flex flex-row">
-                        <h2 className="mx-6">{ record.title }</h2>
+                        <h2 className="mx-6">
+                        <Link href={'/View/${record.id}'}>{ record.title }</Link>
+                        </h2>
                         <h2 className="mx-6">{ record.date }</h2>
                         <h2 className="mx-6">{ record.place }</h2>
                     </div>

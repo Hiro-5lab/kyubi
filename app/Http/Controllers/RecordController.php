@@ -12,4 +12,9 @@ class RecordController extends Controller
     {
         return Inertia::render("View/Index", ["records" => $record->get()]);
     }
+    public function show(Record $record)
+    {
+        dd($record);
+        return Inertia::render("View/Show", ["record" => $record]);
+    }
 }

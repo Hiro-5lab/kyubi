@@ -50,4 +50,8 @@ class User extends Authenticatable
     {
         return $this->belongsTo(belonging::class);
     }
+    public function records()
+    {
+        return $this->hasMany(record::class);
+    }
 }

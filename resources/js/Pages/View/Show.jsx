@@ -5,7 +5,6 @@ import { Link, router } from '@inertiajs/react'
 
 const Show = (props) => {
     const { record } = props;
-    console.log(props);
     
     return (
         <div className ="bg-gray-50">
@@ -15,6 +14,9 @@ const Show = (props) => {
                 <h2>{ record.place }</h2>
                 <p>{ record.comment }</p>
                 <Link href="/View">戻る</Link>
+                <div>
+                    <Link href={`/View/${record.id}/edit`}>編集</Link>
+                </div>
             </div>
         </div>
     );

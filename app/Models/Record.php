@@ -8,5 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Record extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'date', 'place', 'comment'];
+    protected $fillable = [
+        'title',
+        'date',
+        'place',
+        'comment'
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(user::class);
+    }
 }

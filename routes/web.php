@@ -63,7 +63,12 @@ Route::group(["middleware" => ["auth"]], function () {
 Route::group(["middleware" => ["auth"]], function () {
 
     Route::get("/View", [RecordController::class, "index"]);
+    Route::get("/View/create", [RecordController::class, "create"]);
     Route::get("/View/{record}", [RecordController::class, "show"]);
+    Route::post("/View", [RecordController::class, "store"]);
+    Route::get('/View/{record}/edit', [RecordController::class, "edit"]);
+    Route::put('/View/{record}', [RecordController::class, "update"]);
+    Route::delete("/View/{record}", [RecordController::class, "delete"]);
 });
 
 /**

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Models\Post;
 use App\Http\Requests\PostRequest;
+use App\Models\hits;
 use App\Models\Category;
 
 class PostController extends Controller
@@ -25,10 +26,18 @@ class PostController extends Controller
         return inertia("Post/Show", ["post" => $post->load('category')]);
     }
 
-    public function store(PostRequest $request, Post $post)
+    public function store(PostRequest $request, Post $post, Hits $hit)
     {
+        //bunnkatu save
         $input = $request->all();
+
         $post->fill($input)->save();
+        $post_id=$post->id; // bunnkatugo
+        $input += ['record_id' => $post_id]; // hit
+        $hit->fill($input)->save();
+
+        //hits-store
+        //$post->id
         return redirect("/posts/" . $post->id);
     }
 

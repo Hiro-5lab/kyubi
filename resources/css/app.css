@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    @apply text-[#292929];
+}
+
 h1 {
     @apply text-2xl;
 }
@@ -13,7 +17,4 @@ h3 {
 }
 a {
     @apply underline;
-}
-button {
-    @apply bg-[#77c4ed] text-[#002333] rounded-2xl hover:bg-[#b9dbed] focus:outline-none focus:ring-2 focus:ring-[#b9dbed];
 }

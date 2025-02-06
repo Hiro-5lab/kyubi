@@ -3,6 +3,7 @@ import Header from './components/Layout/Header.jsx';
 import Operarion  from "./components/Index/Operation.jsx";
 import Records from "./components/Index/Records.jsx";
 import History from "./components/Index/History.jsx";
+import News from "./components/Index/News.jsx";
 
 import Authenticated from "@/Layouts/AuthenticatedLayout";
 import { Link, router } from '@inertiajs/react'
@@ -14,13 +15,16 @@ const Index = (props) => {
     console.log(props);
 
     return (
-        <div className ="bg-gray-50">
+        <div className ="bg-[#fefefe] w-full x-auto">
             <Header user = {user}/>
-            <div className="mx-1 px-1 border-x-2 border-dashed">
-                <Operarion />
-                <Records records={records} hits={hits}/>
+            <div className="grid grid-cols-12 gap-4 w-full">
+                <News />
+                <div className="col-span-8 w-full">
+                    <Operarion />
+                    <Records records={records} hits={hits}/>
+                </div>
+                <History />
             </div>
-            <History />
         </div>
     );
 }

@@ -9,7 +9,8 @@ function Header({user}) {
         <>
             <div className ="flex mx-10 flex-row border-b-2 border-dashed border-[#bbbcbc]">
                 <div className ="font-bold text-center p-6 w-2/5">
-                    <Link href= "/View"><h1>弓美</h1></Link>
+                    <Link href= "/View"><h1>
+                        弓美</h1></Link>
                 </div>
                 <div className ="w-3/5 p-6">
                     <ul className = "flex mx-10 space-x-4 text-right">

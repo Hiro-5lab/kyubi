@@ -1,9 +1,10 @@
 import React, {useState} from "react";
 import Authenticated from "@/Layouts/AuthenticatedLayout";
 import { Link, router } from '@inertiajs/react';
+import HitRecord from "../Layout/HitRecord.jsx";;
 
 
-function Records({ records }) {
+function Records({ records, hits }) {
 
     const handleDeleteRecord = (id) => {
         router.delete(`/View/${id}`, {
@@ -14,7 +15,7 @@ function Records({ records }) {
     return (
         <div className ="w-4/7">
             { records.map((record)=>
-                <div key={record.id} className="m-3 py-2 shadow-md rounded-md">
+                <div key={record.id} className="m-3 py-2 border-2 rounded-md">
                     <div className ="p-3 flex flex-row">
                         <h2 className="mx-6">
                         <Link href={`/View/${record.id}`}>{ record.title }</Link>
@@ -25,7 +26,8 @@ function Records({ records }) {
                     <div className="px-3">
                         <div className="m-2">
                             <h2>的中記録</h2>
-                            <p className="mx-2">内容</p>
+                            <HitRecord hits={hits}/>
+                            <p>{hits[0].hits}</p>
                         </div>
                         <div className="m-2">
                             <h2>メモ</h2>

@@ -10,13 +10,15 @@ import { Link, router } from '@inertiajs/react'
 const Index = (props) => {
     const { user } = props.auth; // const user = props.auth.user;
     const { records } = props;
+    const { hits } = props;
+    console.log(props);
 
     return (
         <div className ="bg-gray-50">
             <Header user = {user}/>
             <div className="mx-1 px-1 border-x-2 border-dashed">
                 <Operarion />
-                <Records records={records}/>
+                <Records records={records} hits={hits}/>
             </div>
             <History />
         </div>

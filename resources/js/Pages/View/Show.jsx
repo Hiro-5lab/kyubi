@@ -9,7 +9,7 @@ const Show = (props) => {
     const { record } = props;
     
     return (
-        <div className ="bg-gray-50">
+        <div className ="bg-[#fefefe]">
             <Header user = {user}/>
             <div className="m-2 p-3">
                 <h1>{ record.title }</h1>

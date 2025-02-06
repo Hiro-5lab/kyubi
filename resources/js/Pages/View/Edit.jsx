@@ -19,7 +19,7 @@ const Edit = (props) => {
     }
 
     return (
-        <div className ="bg-gray-50">
+        <div className ="bg-[#fefefe]">
             <Header user={props.auth.user} />
             <form onSubmit={handleSendRecords}>
                 <div>

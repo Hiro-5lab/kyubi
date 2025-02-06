@@ -4,22 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Record;
+use App\Models\hits;
 use App\Http\Requests\RecordRequest;
 use Inertia\Inertia;
 
 class RecordController extends Controller
 {
-    public function index(Record $record)
+    public function index(Record $record, hits $hit)
     {
-        return Inertia::render("View/Index", ["records" => $record->get()]);
+        return Inertia::render("View/Index", ["records" => $record->get(), "hits" => $hit->get()]);
     }
     public function show(Record $record)
     {
         return Inertia::render("View/Show", ["record" => $record]);
     }
-    public function create()
+    public function create(hits $hit)
     {
-        return Inertia::render("View/Create");
+        return Inertia::render("View/Create", ["hits" => $hit->get()]);
+        // return Inertia::render("View/Create");
     }
     public function store(RecordRequest $request, Record $record)
     {

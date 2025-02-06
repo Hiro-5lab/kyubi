@@ -4,7 +4,6 @@ import { Link, router } from '@inertiajs/react'
 
 
 function Header({user}) {
-    //const [couunt, setCount] = useState(0);
 
     return(
         <>

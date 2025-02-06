@@ -33,4 +33,9 @@ class hits extends Model
         "hits",
         "sum"
     ];
+
+    public function record()
+    {
+        return $this->belongsTo(Record::class);
+    }
 }

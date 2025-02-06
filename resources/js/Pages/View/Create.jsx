@@ -5,10 +5,12 @@ import { Link, useForm } from '@inertiajs/react'
 import Authenticated from "@/Layouts/AuthenticatedLayout";
 
 const Create = (props) => {
+    const { hits } = props;
     const { data, setData, post } = useForm({
         title:"",
         date:"",
         place:"",
+        hits_id: hits[0].id,
         comment:""
     })
 
@@ -36,6 +38,16 @@ const Create = (props) => {
                         <input type="text" placeholder="場所" onChange={(e) => setData("place", e.target.value)}/>
                         <span className="text-red-600">{props.errors.place}</span>
                 </div>
+                
+                <div>
+                    <h2>Hits</h2>
+                    <select onChange={e =>setData("hits_id", e.target.value)}>
+                    {hits.map((hit) =>
+                        <option value={hit.id}>{hit.id}</option>
+                    )}
+                    </select>
+                </div>
+                
                 <div>
                     <h2>Comment</h2>
                        <textarea placeholder="コメント" onChange={(e) => setData("comment", e.target.value)}></textarea>

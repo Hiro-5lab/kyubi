@@ -12,7 +12,8 @@ class Record extends Model
         'title',
         'date',
         'place',
-        'comment'
+        'comment',
+        'hits_id'
     ];
 
     public function user()

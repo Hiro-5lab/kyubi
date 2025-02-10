@@ -18,14 +18,11 @@ export default function Dashboard({ auth }) {
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 text-gray-900">
                             You're logged in!
+                            <p>アプリへ移動</p>
+                            <Link href="/View">
+                                <span className="border-b-4">View</span>
+                            </Link>
                         </div>
-                    </div>
-                    <div>
-                        <Link href="/posts">Post</Link>
-                        <p>
-                            <Link href="/hits">Hits</Link>
-                        </p>
-                        <Link href="/View">View</Link>
                     </div>
                 </div>
             </div>

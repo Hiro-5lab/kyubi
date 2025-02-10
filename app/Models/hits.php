@@ -30,8 +30,6 @@ class hits extends Model
         "hit18",
         "hit19",
         "hit20",
-        "hits",
-        "sum"
     ];
 
     public function record()

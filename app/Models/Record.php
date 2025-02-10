@@ -24,4 +24,8 @@ class Record extends Model
     {
         return $this->belongsTo(hits::class);
     }
+    public function feedbacks()
+    {
+        return $this->hasMany(feedbacks::class);
+    }
 }

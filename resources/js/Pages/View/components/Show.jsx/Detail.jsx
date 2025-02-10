@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Feedback from "./Feedback";
 
 import Authenticated from "@/Layouts/AuthenticatedLayout";
 import { Link, router } from "@inertiajs/react";
@@ -16,17 +17,27 @@ function Detail({ props }) {
                         <li>{record.place}</li>
                     </ul>
                 </div>
+
                 <div className="p-4">
-                    <p className="text-lg">{record.comment}</p>
-                    <div className="bg-[#f2f2f2] rounded-lg mt-4 p-6">
-                        <h2 className="text-xl font-semibold">
-                            フィードバック
-                        </h2>
-                        <p className="text-lg text-[#666666] mt-2">
-                            comment feedback
-                        </p>
-                    </div>
+                    {record.comment && (
+                        <div className="m-2">
+                            <h2>メモ</h2>
+                            <p className="mx-2">{record.comment}</p>
+                        </div>
+                    )}
+                    {record.hit_id && (
+                        <div className="bg-[#f2f2f2] rounded-lg mt-4 p-6">
+                            <h2 className="text-xl font-semibold">
+                                フィードバック
+                            </h2>
+
+                            <p className="text-lg text-[#666666] mt-2">
+                                <Feedback props={props} />
+                            </p>
+                        </div>
+                    )}
                 </div>
+
                 <div className="pt-6 flex justify-between mt-8">
                     <Link href={`/View/${record.id}/edit`}>
                         <button className="mx-3 px-6 py-3 font-bold rounded-xl bg-[#47bafc] text-[#fefefe] transform hover:scale-105 hover:shadow-lg transition-all duration-300">

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-    @apply text-[#292929];
+    @apply text-[#292929] font-sans;
 }
 
 h1 {

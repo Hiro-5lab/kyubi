@@ -4,12 +4,12 @@ import { Link, useForm } from "@inertiajs/react";
 import Authenticated from "@/Layouts/AuthenticatedLayout";
 
 function Create({ props }) {
-    const { hits } = props;
+    // const { hits } = props;
     const { data, setData, post } = useForm({
         title: "",
         date: "",
         place: "",
-        hits_id: hits[0].id,
+        // hits_id: hits[0].id,
         comment: "",
     });
 
@@ -71,8 +71,8 @@ function Create({ props }) {
                             </span>
                         )}
                     </div>
-
-                    <div className="mb-6">
+                    {/**
+                         * <div className="mb-6">
                         <h2 className="text-xl font-semibold text-[#333333] mb-2">
                             Hits
                         </h2>
@@ -87,6 +87,7 @@ function Create({ props }) {
                             ))}
                         </select>
                     </div>
+                         */}
 
                     <div className="mb-6">
                         <h2 className="text-xl font-semibold text-[#333333] mb-2">

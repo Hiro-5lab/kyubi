@@ -12,7 +12,7 @@ const Create = (props) => {
     const { records } = props;
 
     return (
-        <div className="bg-[#f5f5f5] w-full x-auto h-screen">
+        <div className="bg-[#f5f5f5] w-full x-auto min-h-screen">
             <Header user={user} />
             <div className="w-[70%] mx-auto mt-20 p-4">
                 <From props={props} />

@@ -2,16 +2,12 @@ import React, { useState } from "react";
 import Authenticated from "@/Layouts/AuthenticatedLayout";
 import { Link, router } from "@inertiajs/react";
 
-/**
- * import HitRecord from "./components/Layout/HitRecord.jsx";
- * <HitRecord hits={}/>
- */
-
 function HitRecord({ Data }) {
     console.log(Data);
 
     return (
         <div className="p-2">
+            <h2>的中記録</h2>
             <h3>
                 <Hit Data={Data} />
             </h3>

@@ -59,6 +59,14 @@ Route::group(["middleware" => ["auth"]], function () {
 });
 
 /**
+ * Feedback function
+ */
+Route::group(["middleware" => ["auth"]], function () {
+
+    Route::post('/View/{record}', [FeedbackController::class, "feedback"]);
+});
+
+/**
  * Record function
  */
 Route::group(["middleware" => ["auth"]], function () {
@@ -70,8 +78,8 @@ Route::group(["middleware" => ["auth"]], function () {
     Route::get('/View/{record}/edit', [RecordController::class, "edit"]);
     Route::put('/View/{record}', [RecordController::class, "update"]);
     Route::delete("/View/{record}", [RecordController::class, "delete"]);
-    Route::post('/View/{record}', [FeedbackController::class, "feedback"]);
 });
+
 
 /**
  * first setting

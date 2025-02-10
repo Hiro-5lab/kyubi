@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { Link, useForm } from "@inertiajs/react";
+import HitRecordForm from "./HitRecordForm";
 
 import Authenticated from "@/Layouts/AuthenticatedLayout";
 
 function Create({ props }) {
-    // const { hits } = props;
     const { data, setData, post } = useForm({
         title: "",
         date: "",
         place: "",
-        // hits_id: hits[0].id,
+        hits:[],
         comment: "",
     });
 
@@ -71,23 +71,12 @@ function Create({ props }) {
                             </span>
                         )}
                     </div>
-                    {/**
-                         * <div className="mb-6">
+                    <div className="mb-6">
                         <h2 className="text-xl font-semibold text-[#333333] mb-2">
                             Hits
                         </h2>
-                        <select
-                            onChange={(e) => setData("hits_id", e.target.value)}
-                            className="w-full p-3 border border-[#cccccc] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        >
-                            {hits.map((hit) => (
-                                <option key={hit.id} value={hit.id}>
-                                    {hit.id}
-                                </option>
-                            ))}
-                        </select>
+                        <HitRecordForm record={props.record} className="h-full" />
                     </div>
-                         */}
 
                     <div className="mb-6">
                         <h2 className="text-xl font-semibold text-[#333333] mb-2">

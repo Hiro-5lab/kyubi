@@ -27,13 +27,16 @@ function Records({ records }) {
                                 </div>
                             </div>
                             <div className="px-3">
-                                <div className="m-2">
-                                    <h2>的中記録</h2>
-                                    <HitRecord Data={record.hits_id} />
-                                </div>
+                                {record.hit_id && (
+                                    <HitRecord
+                                        Data={record.hits_id}
+                                        className="m-2"
+                                    />
+                                )}
+
                                 {record.comment && (
                                     <div className="m-2">
-                                        <h2>メモ</h2>
+                                        <h2>comment</h2>
                                         <p className="mx-2">{record.comment}</p>
                                     </div>
                                 )}

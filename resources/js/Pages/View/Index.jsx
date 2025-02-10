@@ -15,7 +15,7 @@ const Index = (props) => {
     console.log(props);
 
     return (
-        <div className="bg-[#f5f5f5] w-full x-auto">
+        <div className="bg-[#f5f5f5] w-full x-auto min-h-screen">
             <Header user={user} />
             <div className="grid grid-cols-12 gap-4 w-full mt-20 p-4">
                 <News />

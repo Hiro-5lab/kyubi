@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('belongings', function (Blueprint $table) {
             $table->id();
-            $table->string('orgnization',50);
-            $table->boolean('gender');
+            $table->string('orgnization',50)->nullable();
+            $table->boolean('gender')->nullable();
             $table->string('team_number', 10)->nullable();
             $table->timestamps();
         });

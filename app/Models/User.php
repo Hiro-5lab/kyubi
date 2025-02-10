@@ -8,7 +8,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-use App\Models\belonging;
 
 class User extends Authenticatable
 {
@@ -53,5 +52,9 @@ class User extends Authenticatable
     public function records()
     {
         return $this->hasMany(record::class);
+    }
+    public function feedbacks()
+    {
+        return $this->hasMany(feedbacks::class);
     }
 }

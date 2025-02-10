@@ -5,6 +5,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\HitsController;
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\RecordController;
+use App\Http\Controllers\FeedbackController;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -69,6 +70,7 @@ Route::group(["middleware" => ["auth"]], function () {
     Route::get('/View/{record}/edit', [RecordController::class, "edit"]);
     Route::put('/View/{record}', [RecordController::class, "update"]);
     Route::delete("/View/{record}", [RecordController::class, "delete"]);
+    Route::post('/View/{record}', [FeedbackController::class, "feedback"]);
 });
 
 /**

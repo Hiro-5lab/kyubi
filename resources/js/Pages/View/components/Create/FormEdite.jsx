@@ -27,7 +27,7 @@ function FormEdit({ props }) {
                     <input
                         type="text"
                         placeholder="タイトル"
-                        value={record.title}
+                        value={data.title}
                         onChange={(e) => setData("title", e.target.value)}
                         className="w-full p-3 border border-[#cccccc] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
@@ -44,7 +44,7 @@ function FormEdit({ props }) {
                     </h2>
                     <input
                         type="date"
-                        value={record.date}
+                        value={data.date}
                         onChange={(e) => setData("date", e.target.value)}
                         className="w-full p-3 border border-[#cccccc] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
@@ -62,7 +62,7 @@ function FormEdit({ props }) {
                     <input
                         type="text"
                         placeholder="場所"
-                        value={record.place}
+                        value={data.place}
                         onChange={(e) => setData("place", e.target.value)}
                         className="w-full p-3 border border-[#cccccc] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
@@ -79,6 +79,7 @@ function FormEdit({ props }) {
                     </h2>
                     <textarea
                         placeholder="コメント"
+                        value={data.comment}
                         onChange={(e) => setData("comment", e.target.value)}
                         className="w-full p-3 border border-[#cccccc] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
@@ -89,7 +90,7 @@ function FormEdit({ props }) {
                         type="submit"
                         className="px-6 py-2 bg-[#47bafc] text-white rounded-xl font-semibold transform hover:scale-105 transition-all duration-300"
                     >
-                        作成
+                        変更
                     </button>
                 </div>
             </form>

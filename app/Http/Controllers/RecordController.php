@@ -21,7 +21,6 @@ class RecordController extends Controller
     public function create(hits $hit)
     {
         return Inertia::render("View/Create", ["hits" => $hit->get()]);
-        // return Inertia::render("View/Create");
     }
     public function store(RecordRequest $request, Record $record)
     {

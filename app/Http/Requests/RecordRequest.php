@@ -16,7 +16,8 @@ class RecordRequest extends FormRequest
         return [
             'title' => 'required|string|max:100',
             'date' => 'required|date',
-            'place' => 'required|string|max:100'
+            'place' => 'required|string|max:100',
+            'hit_id' => 'required'
         ];
     }
 }

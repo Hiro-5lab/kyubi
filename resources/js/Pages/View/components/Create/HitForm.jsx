@@ -3,7 +3,7 @@ import HitButton from "../Layout/HitButton";
 
 function HitForm({ initialData, onSubmit }) {
     const [hits, setHits] = useState(initialData || Array(20).fill(null));
-    const rounds = ["1立", "2立", "3立", "4立", "5立"];
+    const rounds = ["1立目", "2立目", "3立目", "4立目", "5立目"];
 
     const handleHitChange = (index, value) => {
         const newHits = [...hits];

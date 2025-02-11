@@ -3,7 +3,8 @@ import Authenticated from "@/Layouts/AuthenticatedLayout";
 import { Link, router } from "@inertiajs/react";
 import HitRecord from "../Layout/HitRecord.jsx";
 
-function Records({ records }) {
+function Records({ props }) {
+    const { records } = props;
     const handleDeleteRecord = (id) => {
         router.delete(`/View/${id}`, {
             onBefore: () => confirm("本当に削除しますか？"),

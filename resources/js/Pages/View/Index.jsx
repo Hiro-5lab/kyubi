@@ -10,7 +10,6 @@ import { Link, router } from "@inertiajs/react";
 
 const Index = (props) => {
     const { user } = props.auth; // const user = props.auth.user;
-    const { records } = props;
     // const { hits } = props;
     console.log(props);
 
@@ -21,7 +20,7 @@ const Index = (props) => {
                 <News />
                 <div className="col-span-8 w-full">
                     <Operarion />
-                    <Records records={records} />
+                    <Records props={props} />
                 </div>
                 <History />
             </div>

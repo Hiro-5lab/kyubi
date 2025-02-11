@@ -41,13 +41,8 @@ Route::group(["middleware" => ["auth"]], function () {
  */
 Route::group(["middleware" => ["auth"]], function () {
 
-    Route::get("/hits", [HitsController::class, "index"]);
-    Route::get("/hits/create", [HitsController::class, "create"]);
-    Route::get("/hits/{hit}", [HitsController::class, "show"]);
-    Route::post("/hits", [HitsController::class, "store"]);
-    Route::get('/hits/{hit}/edit', [HitsController::class, "edit"]);
-    Route::put('/hits/{hit}', [HitsController::class, "update"]);
-    Route::delete("/hits/{hit}", [HitsController::class, "delete"]);
+    Route::get("/View", [HitsController::class, "index"]);
+    Route::get("/View/create", [HitsController::class, "create"]);
 });
 
 /**
@@ -64,6 +59,7 @@ Route::group(["middleware" => ["auth"]], function () {
 Route::group(["middleware" => ["auth"]], function () {
 
     Route::post('/View/{record}', [FeedbackController::class, "feedback"]);
+    Route::get("/View", [FeedbackController::class, "index"]);
 });
 
 /**

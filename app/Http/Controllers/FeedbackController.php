@@ -5,10 +5,14 @@ namespace App\Http\Controllers;
 use App\Http\Requests\FeedbackRequest;
 use App\Models\feedbacks;
 use Illuminate\Support\Facades\Auth;
-
+use Inertia\Inertia;
 
 class FeedbackController extends Controller
 {
+    public function index(feedbacks $feedback)
+    {
+        return Inertia::render("View/Index", ["feedbacks" => $feedback->get()]);
+    }
     public function feedback(FeedbackRequest $request)
     {
         $user_id = Auth::id();

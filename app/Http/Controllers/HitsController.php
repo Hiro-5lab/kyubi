@@ -13,6 +13,11 @@ class HitsController extends Controller
     {
         return Inertia::render("Hits/Index", ["hits" => $hit->get()]);
     }
+    public function create(hits $hit)
+    {
+        return Inertia::render("View/Create", ["hits" => $hit->get()]);
+    }
+    /*
     public function show(hits $hit)
     {
         return Inertia::render("Hit/Show", ["hits" => $hit]);
@@ -42,4 +47,5 @@ class HitsController extends Controller
         $hit->delete();
         return redirect("/hits");
     }
+     */
 }

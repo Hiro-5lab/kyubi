@@ -4,12 +4,12 @@ import HitRecordForm from "./HitRecordForm";
 
 import Authenticated from "@/Layouts/AuthenticatedLayout";
 
-function Create({ props }) {
+function Form({ props }) {
     const { data, setData, post } = useForm({
         title: "",
         date: "",
         place: "",
-        hits:[],
+        hits: [],
         comment: "",
     });
 
@@ -75,7 +75,10 @@ function Create({ props }) {
                         <h2 className="text-xl font-semibold text-[#333333] mb-2">
                             Hits
                         </h2>
-                        <HitRecordForm record={props.record} className="h-full" />
+                        <HitRecordForm
+                            record={props.record}
+                            onChange={(e) => setData("hits", e.target.value)}
+                        />
                     </div>
 
                     <div className="mb-6">
@@ -111,4 +114,4 @@ function Create({ props }) {
     );
 }
 
-export default Create;
+export default Form;

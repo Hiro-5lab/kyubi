@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Header from "./components/Layout/Header.jsx";
 import Detail from "./components/Show.jsx/Detail.jsx";
 
-import Authenticated from "@/Layouts/AuthenticatedLayout";
+ 
 import { Link, router } from "@inertiajs/react";
 
 const Create = (props) => {

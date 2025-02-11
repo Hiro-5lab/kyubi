@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link, useForm } from "@inertiajs/react";
 import HitRecordForm from "./HitRecordForm";
 
-import Authenticated from "@/Layouts/AuthenticatedLayout";
 
 function Form({ props }) {
     const { data, setData, post } = useForm({

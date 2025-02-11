@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, useForm } from "@inertiajs/react";
 
-import Authenticated from "@/Layouts/AuthenticatedLayout";
 
 function FormEdit({ props }) {
     const { record } = props;

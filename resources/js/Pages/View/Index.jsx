@@ -5,7 +5,7 @@ import Records from "./components/Index/Records.jsx";
 import History from "./components/Index/History.jsx";
 import News from "./components/Index/News.jsx";
 
-import Authenticated from "@/Layouts/AuthenticatedLayout";
+ 
 import { Link, router } from "@inertiajs/react";
 
 const Index = (props) => {

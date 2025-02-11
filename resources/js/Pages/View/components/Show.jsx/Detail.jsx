@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Feedback from "./Feedback";
 
-import Authenticated from "@/Layouts/AuthenticatedLayout";
+ 
 import { Link, router } from "@inertiajs/react";
 
 function Detail({ props }) {

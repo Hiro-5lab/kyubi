@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Authenticated from "@/Layouts/AuthenticatedLayout";
+ 
 import { useParams } from "react-router-dom";
 
 function Feedback({ props }) {

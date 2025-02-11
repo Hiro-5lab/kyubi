@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Header from "./components/Layout/Header.jsx";
 import FromEdite from "./components/Create/FormEdite.jsx";
 
-import Authenticated from "@/Layouts/AuthenticatedLayout";
+ 
 import { Link, router } from "@inertiajs/react";
 
 const Edit = (props) => {

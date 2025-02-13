@@ -1,25 +1,32 @@
 import React, { useState } from "react";
- 
+
 import { useParams } from "react-router-dom";
 
-function Feedback({ props }) {
-    const { feedback_id } = useParams();
-    const { feedbacks } = props;
-
-    const feedback = feedbacks.find(
-        (feedback) => feedback_id === parseInt(feedback_id)
-    );
-
-    if (!feedback) {
+function Feedback({ item }) {
+    console.log(item);
+    if (!item.feedback) {
         return <div>Feedback not found.</div>;
     }
+
+    const formatDate = (datetime) => {
+        if (!datetime) return "Invalid date";
+
+        const dateObj = new Date(datetime);
+        const year = dateObj.getFullYear();
+        const month = String(dateObj.getMonth() + 1).padStart(2, "0");
+        const day = String(dateObj.getDate()).padStart(2, "0");
+        const hours = String(dateObj.getHours()).padStart(2, "0");
+        const minutes = String(dateObj.getMinutes()).padStart(2, "0");
+
+        return `${year}-${month}-${day} ${hours}:${minutes}`;
+    };
+
     return (
         <>
-            <div>
-                <h1>フィードバック</h1>
-                <h3>From {Feedback.user_id.name}</h3>
-                <h2>{feedback.feedback}</h2>
-                <p>{feedback.created_at}</p>
+            <div className="mt-1 pt-2 border-t-2 border-[#fefefe]">
+                <h3 className="text-right">From {item.user.name}</h3>
+                <h2 className="text-[#292929]">{item.feedback}</h2>
+                <p className="text-right">{formatDate(item.created_at)}</p>
             </div>
         </>
     );

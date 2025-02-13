@@ -1,19 +1,23 @@
 import React, { useState } from "react";
 import { Link, useForm } from "@inertiajs/react";
-import HitRecordForm from "./HitRecordForm";
-
+import HitForm from "./HitForm";
 
 function Form({ props }) {
     const { data, setData, post } = useForm({
         title: "",
         date: "",
         place: "",
-        hits: [],
+        hit: Array.from({ length: 20 }, () => 2),
         comment: "",
     });
 
+    const handleHitsChange = (newHits) => {
+        setData("hit", newHits);
+    };
+
     const handleSendRecords = (e) => {
         e.preventDefault();
+        console.log("button push");
         post("/View");
     };
 
@@ -74,9 +78,9 @@ function Form({ props }) {
                         <h2 className="text-xl font-semibold text-[#333333] mb-2">
                             Hits
                         </h2>
-                        <HitRecordForm
-                            record={props.record}
-                            onChange={(e) => setData("hits", e.target.value)}
+                        <HitForm
+                            initialData={data.hit}
+                            onSubmit={handleHitsChange}
                         />
                     </div>
 

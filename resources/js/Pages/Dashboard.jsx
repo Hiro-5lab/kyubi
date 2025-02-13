@@ -18,14 +18,13 @@ export default function Dashboard({ auth }) {
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 text-gray-900">
                             You're logged in!
+                            <p>Let's start app</p>
+                            <Link href="/View">
+                                <button className="mx-3 px-4 py-2 font-bold rounded-xl bg-[#ccc]">
+                                    View
+                                </button>
+                            </Link>
                         </div>
-                    </div>
-                    <div>
-                        <Link href="/posts">Post</Link>
-                        <p>
-                            <Link href="/hits">Hits</Link>
-                        </p>
-                        <Link href="/View">View</Link>
                     </div>
                 </div>
             </div>

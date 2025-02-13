@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Authenticated from "@/Layouts/AuthenticatedLayout";
+
 import { Link, router } from "@inertiajs/react";
 import HitRecord from "../Layout/HitRecord.jsx";
 
@@ -45,9 +45,12 @@ function Records({ props }) {
                         </div>
                     </Link>
                     <div className="flex justify-end">
+                        {/*
                         <button className="m-2 px-3 py-1 font-bold text-[#cccccc] hover:text-[#47bafc]">
                             フィードバック
                         </button>
+                        */}
+
                         <button
                             onClick={() => handleDeleteRecord(record.id)}
                             className="m-2 px-3 py-1 font-bold text-[#cccccc] hover:text-[#fc8947]"

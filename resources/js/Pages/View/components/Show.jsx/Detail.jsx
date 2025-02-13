@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import Feedback from "./Feedback";
 
-import Authenticated from "@/Layouts/AuthenticatedLayout";
 import { Link, router } from "@inertiajs/react";
 
-function Detail({ props }) {
-    const { record } = props;
-
+function Detail( {record, feedbacks} ) {
     return (
         <div className="p-6 max-w-4xl mx-auto border border-[#333333] rounded-lg shadow-lg bg-[#fefefe]">
             <div className="m-4 p-6">
@@ -25,17 +22,17 @@ function Detail({ props }) {
                             <p className="mx-2">{record.comment}</p>
                         </div>
                     )}
-                    {record.hit_id && (
-                        <div className="bg-[#f2f2f2] rounded-lg mt-4 p-6">
-                            <h2 className="text-xl font-semibold">
-                                フィードバック
-                            </h2>
 
-                            <p className="text-lg text-[#666666] mt-2">
-                                <Feedback props={props} />
+                    <div className="bg-[#f2f2f2] rounded-lg mt-4 p-6">
+                        <h2 className="text-xl font-semibold">
+                            フィードバック
+                        </h2>
+                        {feedbacks.map((item) => (
+                            <p key={item.id}>
+                                <Feedback item={item} />
                             </p>
-                        </div>
-                    )}
+                        ))}
+                    </div>
                 </div>
 
                 <div className="pt-6 flex justify-between mt-8">

@@ -4,7 +4,7 @@ import From from "./components/Create/Form.jsx";
 import History from "./components/Index/History.jsx";
 import News from "./components/Index/News.jsx";
 
-import Authenticated from "@/Layouts/AuthenticatedLayout";
+ 
 import { Link, router } from "@inertiajs/react";
 
 const Create = (props) => {

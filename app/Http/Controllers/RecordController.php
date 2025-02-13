@@ -16,7 +16,9 @@ class RecordController extends Controller
     }
     public function show(Record $record)
     {
-        return Inertia::render("View/Show", ["record" => $record]);
+        $feedbacks = $record->feedbacks()->with(["user", "record"])->get();
+
+        return Inertia::render("View/Show", ["record" => $record, "feedbacks" => $feedbacks]);
     }
     public function create()
     {
@@ -25,8 +27,21 @@ class RecordController extends Controller
     public function store(RecordRequest $request, Record $record, Hits $hits)
     {
         $input = $request->all();
-        $hits->fill($input)->save();
 
+        $hits->hits = 0;
+        $hits->sum = 0;
+        for($i = 0; $i < 20; $i++){
+            $hits->{`hit` . ($i+1)} = $input[`hits`][$i];
+            if($input[`hits`][$i] == 1){
+                $hits->hits++;
+            }
+            if($input[`hits`][$i] !== null){
+                $hits->sum++;
+            }
+        }
+        
+        $hits->save();
+        unset($input['hit']);
         $record->fill($input);
         $record->hit_id = $hits->id;
         $record->save();

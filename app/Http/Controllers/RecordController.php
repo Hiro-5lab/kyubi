@@ -30,23 +30,28 @@ class RecordController extends Controller
 
         $hits->hits = 0;
         $hits->sum = 0;
-        for($i = 0; $i < 20; $i++){
-            $hits->{`hit` . ($i+1)} = $input[`hits`][$i];
-            if($input[`hits`][$i] == 1){
+        for ($i = 0; $i < 20; $i++) {
+            $key = 'hit' . ($i + 1);
+            $hits->$key = $input['hits'][$i];
+
+            if ($input['hits'][$i] == 1) {
                 $hits->hits++;
             }
-            if($input[`hits`][$i] !== null){
+            if ($input['hits'][$i] !== null) {
                 $hits->sum++;
             }
         }
-        
+
         $hits->save();
-        unset($input['hit']);
+        unset($input['hits']);
+
         $record->fill($input);
         $record->hit_id = $hits->id;
         $record->save();
+
         return redirect("/View/" . $record->id);
     }
+
     public function edit(Record $record)
     {
         return Inertia::render("View/Edit", ["record" => $record]);

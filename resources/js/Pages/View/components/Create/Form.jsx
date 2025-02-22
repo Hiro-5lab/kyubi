@@ -7,7 +7,7 @@ function Form({ props }) {
         title: "",
         date: "",
         place: "",
-        hit: Array.from({ length: 20 }, () => 2),
+        hits: Array.from({ length: 20 }, () => 2),
         comment: "",
     });
 
@@ -79,7 +79,7 @@ function Form({ props }) {
                             Hits
                         </h2>
                         <HitForm
-                            initialData={data.hit}
+                            initialData={data.hits}
                             onSubmit={handleHitsChange}
                         />
                     </div>
